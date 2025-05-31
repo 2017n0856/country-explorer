@@ -1,9 +1,13 @@
-import React from "react";
+import {  Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 
-const Loader: React.FC = () => (
-  <div className="loader">
-    <div className="spinner" />
-  </div>
-);
+const Loader = () => {
+
+  return (
+    <div className="country-card" tabIndex={0}>
+      <Spin indicator={<LoadingOutlined spin />} size="large" />
+    </div>
+  );
+};
 
 export default Loader;

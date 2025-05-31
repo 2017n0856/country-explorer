@@ -1,6 +1,7 @@
 import React from "react";
 import CountryCard from "./CountryCard.tsx";
 import type { Country } from "../types/country.ts";
+import Loader from "./Loader.tsx";
 
 interface Props {
   countries: Country[];
@@ -13,6 +14,7 @@ const CountryList: React.FC<Props> = ({ countries }) => {
 
   return (
     <div className="country-list">
+      <Loader />
       {countries.map((country) => (
         <CountryCard key={country.name.common} country={country} />
       ))}
