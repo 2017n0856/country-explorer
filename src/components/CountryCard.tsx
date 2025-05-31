@@ -9,7 +9,6 @@ interface Props {
 const CountryCard: React.FC<Props> = ({ country }) => {
   const [loaded, setLoaded] = useState(false);
 
-  // Simulate 1-second artificial delay per requirements
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 1000);
     return () => clearTimeout(timer);
@@ -17,9 +16,7 @@ const CountryCard: React.FC<Props> = ({ country }) => {
 
   if (!loaded) {
     return (
-      <div className="country-card loading">
         <Loader />
-      </div>
     );
   }
 
@@ -27,7 +24,7 @@ const CountryCard: React.FC<Props> = ({ country }) => {
     <div className="country-card" tabIndex={0}>
       <img
         src={country.flags.png}
-        alt={country.flags.alt || `${country.name.common} flag`}
+        alt={country.name.common}
         className="country-flag"
       />
       <h3 className="country-name">{country.name.common}</h3>

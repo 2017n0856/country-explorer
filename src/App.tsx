@@ -6,7 +6,7 @@ import type { Country } from "./types/country.ts";
 
 const App: React.FC = () => {
   const [countries, setCountries] = useState<Country[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search, 500);
@@ -52,11 +52,7 @@ const App: React.FC = () => {
       <SearchBar query={search} onChange={setSearch} />
       </div>
       {error && <p className="error-message">{error}</p>}
-      {loading && !countries.length ? (
-        <p>Loading countries...</p>
-      ) : (
-        <CountryList countries={countries} />
-      )}
+        <CountryList countries={countries} loading={loading} />
     </div>
   );
 };

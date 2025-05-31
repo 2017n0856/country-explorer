@@ -4,7 +4,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 const Loader = () => {
 
   return (
-    <div className="country-card" tabIndex={0}>
+    <div className="country-card loading">
       <Spin indicator={<LoadingOutlined spin />} size="large" />
     </div>
   );

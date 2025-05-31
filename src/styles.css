@@ -74,6 +74,12 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: default;
     max-width: 320px;
+    &.loading {
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   
   .country-card:hover,
@@ -117,11 +123,5 @@
     font-weight: 600;
     margin-bottom: 16px;
   }
-  
-  .country-card.loading {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   
