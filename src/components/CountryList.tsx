@@ -1,6 +1,24 @@
 import React from "react";
 import CountryCard from "./CountryCard.tsx";
 import type { Country } from "../types/country.ts";
+import styled from "styled-components";
+
+const StyledCountryList = styled.div`
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+  padding-bottom: 32px;
+  justify-content: center;
+  justify-items: center;
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
 
 interface Props {
   countries: Country[];
@@ -13,7 +31,7 @@ const  CountryList: React.FC<Props> = ({ countries, loading }) => {
   }
 
   return (
-    <div className="country-list">
+    <StyledCountryList>
       {countries.map((country, index) => (
         <CountryCard 
         key={country.name.common} 
@@ -21,7 +39,7 @@ const  CountryList: React.FC<Props> = ({ countries, loading }) => {
         delay={(index + 1) * 1000}
       />
       ))}
-    </div>
+    </StyledCountryList>
   );
 };
 
