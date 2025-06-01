@@ -21,6 +21,12 @@
     text-align: center;
     margin-bottom: 16px;
   }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+    }
+  }
   
   .search-bar {
     display: block;
@@ -75,7 +81,7 @@
     cursor: default;
     max-width: 320px;
     &.loading {
-      height: 220px;
+      height: 224px;
       display: flex;
       justify-content: center;
       align-items: center;

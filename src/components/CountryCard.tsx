@@ -25,8 +25,9 @@ const CountryCard: React.FC<Props> = ({ country, delay }) => {
     <div className="country-card" tabIndex={0}>
       <img
         src={country.flags.png}
-        alt={country.name.common}
+        // alt={country.name.common}
         className="country-flag"
+        loading="lazy"
       />
       <h3 className="country-name">{country.name.common}</h3>
       <p className="country-population">
