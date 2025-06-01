@@ -15,6 +15,7 @@ const App: React.FC = () => {
     const fetchCountries = async () => {
       setLoading(true);
       setError(null);
+      setCountries([]);
 
       const baseUrl = "https://restcountries.com/v3.1";
       const fields = "fields=name,flags,population";

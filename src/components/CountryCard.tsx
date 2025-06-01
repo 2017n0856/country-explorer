@@ -4,15 +4,16 @@ import type { Country } from "../types/country.ts";
 
 interface Props {
   country: Country;
+  delay: number
 }
 
-const CountryCard: React.FC<Props> = ({ country }) => {
+const CountryCard: React.FC<Props> = ({ country, delay }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 1000);
+    const timer = setTimeout(() => setLoaded(true), delay);
     return () => clearTimeout(timer);
-  }, []);
+  }, [delay]);
 
   if (!loaded) {
     return (

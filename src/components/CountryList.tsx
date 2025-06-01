@@ -14,8 +14,12 @@ const  CountryList: React.FC<Props> = ({ countries, loading }) => {
 
   return (
     <div className="country-list">
-      {countries.map((country) => (
-        <CountryCard key={country.name.common} country={country} />
+      {countries.map((country, index) => (
+        <CountryCard 
+        key={country.name.common} 
+        country={country} 
+        delay={(index + 1) * 1000}
+      />
       ))}
     </div>
   );

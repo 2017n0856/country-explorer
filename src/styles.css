@@ -75,7 +75,7 @@
     cursor: default;
     max-width: 320px;
     &.loading {
-      height: 200px;
+      height: 220px;
       display: flex;
       justify-content: center;
       align-items: center;
